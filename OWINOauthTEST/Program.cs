@@ -15,6 +15,7 @@ namespace OWINOauthTEST
             using (WebApp.Start<Startup>(hostUrl))
             {
                 System.Console.WriteLine(string.Format("Start listening at {0} ....", hostUrl));
+                System.Console.WriteLine("Press any key to exit  ");
                 System.Console.ReadKey();
             }
         }
