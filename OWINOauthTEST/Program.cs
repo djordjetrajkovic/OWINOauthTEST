@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.Owin.Hosting;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -8,8 +9,14 @@ namespace OWINOauthTEST
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
+            string hostUrl = "http://localhost:1234";
+            using (WebApp.Start<Startup>(hostUrl))
+            {
+                System.Console.WriteLine(string.Format("Start listening at {0} ....", hostUrl));
+                System.Console.ReadKey();
+            }
         }
     }
 }
